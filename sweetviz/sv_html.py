@@ -12,7 +12,7 @@ from functools import cmp_to_key
 package_loader = PackageLoader("sweetviz", "templates")
 jinja2_env = Environment(lstrip_blocks = True,
                          trim_blocks = True,
-                         loader = package_loader)
+                         loader = package_loader, autoescape=True)
 jinja2_env.filters["fmt_int_commas"] = sweetviz.sv_html_formatters.fmt_int_commas
 jinja2_env.filters["fmt_int_limit"] = sweetviz.sv_html_formatters.fmt_int_limit
 jinja2_env.filters["fmt_assoc"] = sweetviz.sv_html_formatters.fmt_assoc
